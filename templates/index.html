@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="./qr-code-icon.svg" type="image/x-icon">
+    <title>QR Code Generator</title>
+</head>
+<body>
+    <div class="title">
+        <h1>QR Code Generator 🔥</h1>
+        <h2>Insert a link bellow to generate a QR Code</h2>
+    </div>
+    <form action="/" method="post">
+        <input type="text" name="link" id="">
+        <button type="submit">Generate QR</button>
+    </form>
+
+    {% if data %}
+    <div class="generated">
+        <img src="{{data}}" alt="">
+        <p>Here is the QR Code we generated for you 🚀</p>
+    </div>
+    {% endif %}
+</body>
+</html>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    @media only screen and (min-width: 1350px) {
+        html, body {
+            margin: 0rem 10rem;
+            font-family: 'Poppins', sans-serif;
+        }
+        .title {
+            padding: 5rem 5rem 3rem 5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 2em;
+            color: rgb(37, 37, 37);
+        }
+    }
+
+    /* @media only screen and (max-width: 1349px) and (min-width: 769px) {
+        html, body {
+            margin: 0rem 2rem;
+            font-family: 'Poppins', sans-serif;
+        }
+        .title {
+            padding: 5rem 0rem 3rem 0rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 2em;
+            color: rgb(37, 37, 37);
+        }
+    }
+
+    @media only screen and (max-width: 768px) {
+        html, body {
+            margin: 0rem 1rem;
+            font-family: 'Poppins', sans-serif;
+        }
+        .title {
+            padding: 5rem 0rem 3rem 0rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 2em;
+            color: rgb(37, 37, 37);
+        }
+    } */
+
+    form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1em;
+    }
+
+    form input {
+        font-size: 1.2em;
+        padding: 0.5rem 1rem;
+        width: 75%;
+        color: black;
+        text-align: center;
+        border: 2px solid black;
+        border-radius: 0.5rem;
+    }
+
+    form input:focus {
+        outline: none;
+    }
+
+    form button {
+        font-size: 1rem;
+        background: rgb(46, 64, 121);
+        color: white;
+        padding: 1rem 1.5rem;
+        cursor: pointer;
+        border: none;
+        border-radius: 0.5rem;
+    }
+
+    .generated {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+</style>
